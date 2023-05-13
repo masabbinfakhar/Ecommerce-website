@@ -22,28 +22,9 @@
   align-items: flex-start;
 }
 
-/* .CarouselImage {
-  width: 20vmax;
-  height: 20vmax;
-  object-fit: contain; /* or 'cover' */
-
 .CarouselImage {
-    /* width: 10em; */
-    max-width: 100%; /* set a maximum width for the image to prevent it from getting too large */
-    max-height: 100%;
-    /* height: 25em; */
-     /* set height to auto to maintain aspect ratio of image */
-    /* object-fit: cover; */
-     /* crop image to fit the container */
-    display: inline-block; /* set display to block to remove any inline spacing */
-    /* float the image to the left of the container */
-    margin-right: 500px;
-    object-fit: contains; /* add margin to the right to create some spacing between image and other elements */
+  width: 20vmax;
 }
-  
-  
-
-
 
 .detailsBlock-1 > h2 {
   color: rgb(54, 54, 54);
@@ -139,7 +120,7 @@
 
 .detailsBlock-4 > p {
   color: rgba(0, 0, 0, 0.534);
-  font: 300 0.8vmax sans-serif;
+  font: 300 1vmax sans-serif;
 }
 
 .submitReview {

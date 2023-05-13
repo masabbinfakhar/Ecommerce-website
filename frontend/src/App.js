@@ -4,7 +4,7 @@
 
 import "./App.css";
 import Header from "./component/layout/Header/Header.js";
-import { BrowserRouter as Router, Route,Routes,Navigate} from "react-router-dom";
+import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import WebFont from "webfontloader";
 import React,{useEffect,useState } from "react";
 import Footer from "./component/layout/Footer/Footer.js";
@@ -51,7 +51,7 @@ import About from "./component/layout/About/About";
 
 function App(){
 
-  const {isAuthenticated,user,error=null}=useSelector(state=>state.user);
+  const {isAuthenticated,user}=useSelector(state=>state.user);
 
   const [stripeApiKey, setStripeApiKey] = useState("");
   // const Navigate = useNavigate();
@@ -108,7 +108,7 @@ return(
   <Route exact path="/password/forgot" element={<ForgotPassword/>} />
   <Route exact path="/password/reset/:token" element={<ResetPassword/>} />
   <Route exact path="/Profile" element={<ResetPassword user={user}/>} />
-  <Route exact path="/account" element={<Profile user={user} />} />
+  <Route exact path="/account" element={isAuthenticated ?<Profile user={user} /> :<LoginSignUp/>}/>
   <Route exact path="/login" element={<LoginSignUp/>}/>
   <Route exact path="/cart" element={isAuthenticated ?<Cart user={user}/>:<LoginSignUp/>}/>
   <Route exact path="/shipping" element={isAuthenticated ? <Shipping user={user} /> : <LoginSignUp />} />
@@ -175,7 +175,7 @@ return(
 
 <Route exact path="/admin/reviews" element={isAuthenticated ?<ProductReviews user={user} /> : <LoginSignUp />} />
 
-<Route component={<NotFound/>}/> //not working
+<Route exact element={<NotFound/>}/> 
 
 
 

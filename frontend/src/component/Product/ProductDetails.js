@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Carousel from "react-material-ui-carousel";
+// import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -118,7 +118,7 @@ const ProductDetails = ({ match }) => {
         <MetaData title={`${product.name}`}/>
     <div className="ProductDetails">
     <div>
-              <Carousel>
+              {/* <Carousel> */}
                 {product.images &&
                   product.images.map((item, i) => (
                     <img
@@ -128,7 +128,7 @@ const ProductDetails = ({ match }) => {
                       alt={`${i} Slide`}
                     />
                   ))}
-              </Carousel>
+              {/* </Carousel> */}
             </div>
 
             <div>
@@ -166,7 +166,7 @@ const ProductDetails = ({ match }) => {
             </div>
 
             <div className="detailsBlock-4">
-              Discription:<p>{product.description}</p>
+              Discription:<p><br/>{product.description}</p>
             </div>
 
             <button onClick={submitReviewToggle} className="submitReview">Submit Review</button>
